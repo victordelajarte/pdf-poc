@@ -7,7 +7,8 @@ const config = {
     contact_signature: {
         isSignature: true,
         text: () => 'Victor de Lajarte',
-    }
+    },
+    start_date: { text: () => new Date().toLocaleDateString() }
 }
 
 const formPdfBytes = fs.readFileSync('./input.pdf');
@@ -36,6 +37,7 @@ for (const field of fields) {
     formField.enableReadOnly();
 }
 
+// Flatten the form so it can't be edited anymore, each field becomes a text layer (necessary to apply the font)
 form.flatten();
 
 // Serialize the PDFDocument to bytes (a Uint8Array)
