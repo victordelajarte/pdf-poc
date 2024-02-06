@@ -16,15 +16,13 @@ const formPdfBytes = fs.readFileSync("./input.pdf"); // ou fetchPdfFromURL
 
 const pdfDoc = await PDFDocument.load(formPdfBytes);
 
-const signatureFont = await pdfDoc.embedFont(
-  StandardFonts.TimesRomanBoldItalic
-);
+const specialFont = await pdfDoc.embedFont(StandardFonts.TimesRomanBoldItalic);
 
 const config = {
   company_name: { text: "My Company" },
-  contact_email: { text: "victor@asap.work" },
+  contact_email: { text: "victor@gmail.com" },
   contact_signature: {
-    font: signatureFont,
+    font: specialFont,
     text: "Victor de Lajarte",
   },
   start_date: { text: new Date().toLocaleDateString() },
@@ -41,7 +39,7 @@ for (const field of fields) {
   const formField = form.getTextField(fieldName);
   const fieldConfig = config[fieldName];
 
-  const value = fieldConfig?.text ?? "VALEUR NON DEFINIE";
+  const value = fieldConfig?.text ?? "";
 
   formField.setText(value);
   if (fieldConfig?.font) {
