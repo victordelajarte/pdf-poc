@@ -1,7 +1,18 @@
 import { PDFDocument, StandardFonts } from "pdf-lib";
 import fs from "fs";
 
-const formPdfBytes = fs.readFileSync("./input.pdf");
+// /**
+//  * Récupère un buffer prêt à être chargé par pdf-lib directement depuis une URL
+//  */
+// const fetchPdfFromURL = async (url) => {
+//   const response = await fetch(url);
+//   if (!response.ok) throw new Error("Network response was not ok");
+//   const arrayBuffer = await response.arrayBuffer();
+//   const buffer = Buffer.from(arrayBuffer);
+//   return buffer;
+// };
+
+const formPdfBytes = fs.readFileSync("./input.pdf"); // ou fetchPdfFromURL
 
 const pdfDoc = await PDFDocument.load(formPdfBytes);
 
