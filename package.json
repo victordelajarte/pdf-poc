@@ -1,9 +1,12 @@
 {
   "author": "",
   "dependencies": {
-    "pdf-lib": "1.17.1"
+    "@cantoo/pdf-lib": "2.2.4"
   },
   "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.7"
+  },
   "license": "ISC",
   "main": "index.js",
   "name": "pdf-poc",
@@ -11,8 +14,5 @@
     "start": "npx tsx index.ts"
   },
   "type": "module",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@types/node": "^22.10.7"
-  }
+  "version": "1.0.0"
 }

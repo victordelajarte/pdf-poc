@@ -1,5 +1,5 @@
+import { PDFDocument, PDFFont, StandardFonts } from "@cantoo/pdf-lib";
 import fs from "fs";
-import { PDFDocument, PDFFont, StandardFonts } from "pdf-lib";
 
 // /**
 //  * Récupère un buffer prêt à être chargé par pdf-lib directement depuis une URL
